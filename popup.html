@@ -1,0 +1,190 @@
+<!DOCTYPE html> <!-- The new doctype -->
+<html>
+<head> <!-- No title and meta tags are necessary for the extension -->
+
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<script src="js/vendor/jquery-1.9.1.min.js"></script> <!-- Including jQuery -->
+<script src="js/vendor/jquery-migrate-1.1.0.min.js"></script>
+<script src="popup.js"></script> <!-- Our script file -->
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">
+jQuery.noConflict();
+  google.load("visualization", "1", {packages:["corechart"]});
+  google.setOnLoadCallback(drawChart);
+  function drawChart() {
+    var wo = google.visualization.arrayToDataTable([
+      ['Maccro', 'Macro per Day'],
+      ['Protien',     180.0],
+      ['Carbs',      237.0],
+      ['Fat',  35.1]
+    ]);
+    var rt = google.visualization.arrayToDataTable([
+      ['Maccro', 'Macro per Day'],
+      ['Protien',     180.0],
+      ['Carbs',      51.4],
+      ['Fat',  68.6]
+    ]);
+
+    var wo_options = {
+      title: 'Workout Day'
+    };
+    var rt_options = {
+      title: 'Rest Day'
+    };
+
+    var wo_chart = new google.visualization.PieChart(jQuery('#wo-pie').get(0));
+    var rt_chart = new google.visualization.PieChart(jQuery('#rt-pie').get(0));
+    wo_chart.draw(wo, wo_options);
+    rt_chart.draw(rt, rt_options);
+  }
+  jQuery('.meal_header').addClass('something');
+  alert('ji');
+</script>
+
+
+</head>
+
+<body>
+
+<strong>Leangains Setting | MFP</strong>
+<div class="wrapper">
+<form>
+<div id="content">
+<!-- The latest tutorials are going to be inserted here -->
+	<table id="lg-days" class="table table-bordered table-condensed table-hover table-striped">
+	<thead>
+	<tr>
+		<th>workout Days</th>
+		<th></th>
+		<th>Rest Days</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<td><input type="checkbox" name="workout[]" value="m"></td>
+		<td><span>Monday</span></td>
+		<td><input type="checkbox" name="rest[]" value="m"></td>
+	</tr>
+	<tr>
+		<td><input type="checkbox" name="workout[]" value="t"></td>
+		<td><span>Tuesday</span></td>
+		<td><input type="checkbox" name="rest[]" value="t"></td>
+	</tr>
+	<tr>
+		<td><input type="checkbox" name="workout[]" value="w"></td>
+		<td><span>Wednesday</span></td>
+		<td><input type="checkbox" name="rest[]" value="w"></td>
+	</tr>
+	<tr>
+		<td><input type="checkbox" name="workout[]" value="th"></td>
+		<td><span>Thursday</span></td>
+		<td><input type="checkbox" name="rest[]" value="th"></td>
+	</tr>
+	<tr>
+		<td><input type="checkbox" name="workout[]" value="f"></td>
+		<td><span>Friday</span></td>
+		<td><input type="checkbox" name="rest[]" value="f"></td>
+	</tr>
+	<tr>
+		<td><input type="checkbox" name="workout[]" value="sa"></td>
+		<td><span>Saturday</span></td>
+		<td><input type="checkbox" name="rest[]" value="sa"></td>
+	</tr>
+	<tr>
+		<td><input type="checkbox" name="workout[]" value="su"></td>
+		<td><span>Sunday</span></td>
+		<td><input type="checkbox" name="rest[]" value="su"></td>
+	</tr>
+</tbody>
+	</table>
+</div>
+<div id="calories" class="row">
+	<div class="lg-cal span3 pull-right">
+		<div><span>Rest Days</span></div>
+		<div class="input-append">
+			<input class="span2" id="rt-cal-input" type="text" placeholder="1543">
+			<span class="add-on">Cals</span>
+		</div>
+	</div>
+	<div class="lg-cal span3 pull-left">
+		<div><span>Workout Days</span></div>
+		<div class="input-append">
+			<input class="span2" id="wo-cal-input" type="text" placeholder="1984">
+			<span class="add-on">Cals</span>
+		</div>
+	</div>
+</div>
+<div id="macro">
+	<div class="lg-macro row">
+		<div class="span3 pull-right">
+			<span>Rest Days</span>
+		    <div class="input-prepend input-append">
+		    <span class="add-on">Protien</span>
+		    <input class="span2" id="rt-protien" type="text" placeholder="0.0">
+		    <span class="add-on">g</span>
+		    </div>
+	        <div class="input-prepend input-append">
+		    <span class="add-on">Carbs</span>
+		    <input class="span2" id="rt-carbs" type="text" placeholder="0.0">
+		    <span class="add-on">g</span>
+		    </div>
+	        <div class="input-prepend input-append">
+		    <span class="add-on">Fat</span>
+		    <input class="span2" id="rt-fat" type="text" placeholder="0.0">
+		    <span class="add-on">g</span>
+		    </div>
+		</div>
+		<div class="span3 pull-left">
+			<span>Workout Days</span>
+		    <div class="input-prepend input-append">
+		    <span class="add-on">Protien</span>
+		    <input class="span2" id="wo-protien" type="text" placeholder="0.0">
+		    <span class="add-on">g</span>
+		    </div>
+	        <div class="input-prepend input-append">
+		    <span class="add-on">Carbs</span>
+		    <input class="span2" id="wo-carbs" type="text" placeholder="0.0">
+		    <span class="add-on">g</span>
+		    </div>
+	        <div class="input-prepend input-append">
+		    <span class="add-on">Fat</span>
+		    <input class="span2" id="wo-fat" type="text" placeholder="0.0">
+		    <span class="add-on">g</span>
+		    </div>
+		</div>
+		
+	</div>
+</div>
+<div id="summary">
+	<div class="total-week-expenditure row">
+		<div class="span6">
+		<strong>Week TEE:</strong> 15429 cals
+		</div>	
+	</div>
+	<div class="total-daily-expenditure row">
+		<div class="span6">
+		<strong>TDEE:</strong> 2204 cals
+		</div>
+	</div>
+	<div class="week-enery row">
+		<div class="span2">
+			<strong>Weel Calories:</strong> 12123
+		</div>
+		<div class="span2">
+			<strong>Week Over:</strong> -3306
+		</div>
+		<div class="span2">
+			<strong>Week Change:</strong> -0.94
+		</div>
+	</div>
+</div>
+</form>
+
+<div id="piechart" class="row">
+	<div id="wo-pie" class=""></div>
+	<div id="rt-pie" class=""></div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,9 @@
+body {margin: 20px;}
+.wrapper {width: 500px;margin: 0 auto;padding: 10px 20px;}
+#lg-days th, #lg-days td {text-align: center !important;}
+.lg-cal span, .lg-macro span {font-weight:bold;}
+.day-type {text-align: center;}
+.day-type h1 {margin:0 auto 20px;font-weight: bold;}
+
+#today-ratio {width:50%;float:left;}
+#rec-ratio {width:50%;float:left;}

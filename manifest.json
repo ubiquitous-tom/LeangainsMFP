@@ -1,0 +1,30 @@
+{
+	"manifest_version": 2,
+
+	"name": "Leangains Plugin for MyFitnessPal",
+	"description": "leangains calories for Workout day/Rest day with the pie chart with all the breakdown from http://www.1percentedge.com/ifcalc/",
+	"version": "0.1",
+
+	"browser_action": {
+		"default-icon": {
+			"19": "img/icon.png",
+			"38": "img/icon.png"
+		},
+		"default_title": "Leangains MFP"//,
+		//"default_popup": "popup.html"
+	},
+
+	"options_page": "options.html",
+
+	"permissions": [ "tabs", "storage", "contextMenus", "http://*/*", "https://*/*" ],
+
+	"background": {
+		"scripts": [ "js/background.js" ]
+	},
+
+	"content_scripts": [{
+		"matches": [ "*://*.myfitnesspal.com/food/diary/*"],
+		"css": [ "css/style.css" ],
+		"js": ["js/vendor/jquery-1.9.1.min.js", "js/vendor/jquery-migrate-1.1.1.min.js", "js/vendor/raphael-min.js", "js/vendor/g.raphael-min.js", "js/vendor/g.pie-min.js", "js/main.js"]
+	}]
+}

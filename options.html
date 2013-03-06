@@ -1,0 +1,230 @@
+<!DOCTYPE html> <!-- The new doctype -->
+<html>
+<head> <!-- No title and meta tags are necessary for the extension -->
+
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<script src="js/vendor/jquery-1.9.1.min.js"></script> <!-- Including jQuery -->
+<script src="js/vendor/jquery-migrate-1.1.0.min.js"></script>
+<script src="js/options.js"></script> <!-- Our script file -->
+<!-- <script type="text/javascript" src="https://www.google.com/jsapi"></script> -->
+</head>
+
+<body>
+
+<div class="container">
+	<h3>Leangains Setting | MFP</h3>
+<div class="span12">
+<form>
+<div id="content">
+<!-- The latest tutorials are going to be inserted here -->
+	<table id="lg-days" class="table table-bordered table-condensed table-hover table-striped">
+	<thead>
+	<tr>
+		<th>workout Days</th>
+		<th></th>
+		<th>Rest Days</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<td><input id="workout_m" type="radio" name="m" value="m"></td>
+		<td><span>Monday</span></td>
+		<td><input id="rest_m" type="radio" name="m" value="m"></td>
+	</tr>
+	<tr>
+		<td><input id="workout_t" type="radio" name="t" value="t"></td>
+		<td><span>Tuesday</span></td>
+		<td><input id="rest_t" type="radio" name="t" value="t"></td>
+	</tr>
+	<tr>
+		<td><input id="workout_w" type="radio" name="w" value="w"></td>
+		<td><span>Wednesday</span></td>
+		<td><input id="rest_w" type="radio" name="w" value="w"></td>
+	</tr>
+	<tr>
+		<td><input id="workout_th" type="radio" name="th" value="th"></td>
+		<td><span>Thursday</span></td>
+		<td><input id="rest_th" type="radio" name="th" value="th"></td>
+	</tr>
+	<tr>
+		<td><input id="workout_f" type="radio" name="f" value="f"></td>
+		<td><span>Friday</span></td>
+		<td><input id="rest_f" type="radio" name="f" value="f"></td>
+	</tr>
+	<tr>
+		<td><input id="workout_sa" type="radio" name="sa" value="sa"></td>
+		<td><span>Saturday</span></td>
+		<td><input id="rest_sa" type="radio" name="sa" value="sa"></td>
+	</tr>
+	<tr>
+		<td><input id="workout_su" type="radio" name="su" value="su"></td>
+		<td><span>Sunday</span></td>
+		<td><input id="rest_su" type="radio" name="su" value="su"></td>
+	</tr>
+</tbody>
+	</table>
+</div>
+<div id="calories" class="clearfix">
+	<div class="lg-cal pull-right">
+		<div><span>Rest Days</span></div>
+		<div class="input-append">
+			<input class="span4" id="rt-cal-input" type="text" placeholder="in calories">
+			<span class="add-on">Cals</span>
+		</div>
+	</div>
+	<div class="lg-cal pull-left">
+		<div><span>Workout Days</span></div>
+		<div class="input-append">
+			<input class="span4" id="wo-cal-input" type="text" placeholder="in calories">
+			<span class="add-on">Cals</span>
+		</div>
+	</div>
+</div>
+<div id="macro" class="clearfix">
+	<div class="lg-macro">
+		<div class=" pull-left">
+			<span>Workout Days</span>
+		    <div class="input-prepend input-append">
+		    <span class="add-on">Protein</span>
+		    <input class="span4" id="wo-protein" type="text" placeholder="in grams">
+		    <span class="add-on">g</span>
+		    </div>
+	        <div class="input-prepend input-append">
+		    <span class="add-on">Carbs</span>
+		    <input class="span4" id="wo-carbs" type="text" placeholder="in grams">
+		    <span class="add-on">g</span>
+		    </div>
+	        <div class="input-prepend input-append">
+		    <span class="add-on">Fat</span>
+		    <input class="span4" id="wo-fat" type="text" placeholder="in grams">
+		    <span class="add-on">g</span>
+		    </div>
+		</div>
+		<div class=" pull-right">
+			<span>Rest Days</span>
+		    <div class="input-prepend input-append">
+		    <span class="add-on">Protein</span>
+		    <input class="span4" id="rt-protein" type="text" placeholder="in grams">
+		    <span class="add-on">g</span>
+		    </div>
+	        <div class="input-prepend input-append">
+		    <span class="add-on">Carbs</span>
+		    <input class="span4" id="rt-carbs" type="text" placeholder="in grams">
+		    <span class="add-on">g</span>
+		    </div>
+	        <div class="input-prepend input-append">
+		    <span class="add-on">Fat</span>
+		    <input class="span4" id="rt-fat" type="text" placeholder="in grams">
+		    <span class="add-on">g</span>
+		    </div>
+		</div>
+		
+		
+	</div>
+</div>
+<div id="personal-data" style="display:none;">
+	<div class="gender">
+	<strong>Gender</strong>
+	<label class="radio">
+		<input type="radio" name="gender" id="gender_m" value="m">	
+		Male
+	</label>
+	<label class="radio">
+		<input type="radio" name="gender" id="gender_f" value="f">	
+		Female
+	</label>
+	</div>
+	<div class="height"> 
+		<strong>Height</strong>
+		<div class="form-inline">
+			<div class="input-append">
+				<input id="height_ft" type="text" class="input-small" placeholder="0">	
+				<span class="add-on">ft.</span>
+				<input id="height_in" type="text" class="input-small" placeholder="0">	
+				<span class="add-on">in.</span>
+			</div>
+			<div class="input-append">
+				<input id="height_cm" type="text" class="input-small" placeholder="0" disabled>	
+				<span class="add-on">cm.</span>
+			</div>
+		</div>
+	</div>
+	<div class="weight">
+		<strong>Weight</strong>
+		<div class="input-append">
+			<input id="weight_lb" type="text" class="input-small" placeholder="0">		
+			<span class="add-on">lb.</span>
+		</div>
+		<div class="input-append">
+			<input id="weight_kg" type="text" class="input-small" placeholder="0" disabled>		
+			<span class="add-on">kg.</span>
+		</div>
+	</div>
+	<div class="age">
+		<strong>Age</strong>
+		<div class="input-append">
+		 <input id="age" type="text" class="input-small" placeholder="0"><span class="add-on">yr.</span>
+		</div>
+	</div>
+	<div class="activity">
+		<strong>Activity</strong>
+		<div>
+		<select id="activity">
+			<option value="0">Sedentary</option>
+			<option value="1">Lightly Active</option>
+			<option value="2">Moderately Active</option>
+			<option value="3">Very Active</option>
+			<option value="4">Extremely Active</option>
+		</select>
+		</div>
+	</div>
+</div>
+<div id="summary" style="display:none;">
+	<div class="input-append">
+		<input class="span2" id="bmr" type="text">
+		<span class="add-on">Cals</span>
+	</div>
+	
+
+	<div class="total-week-expenditure">
+		<label>BMR: </label>
+		<div class="input-append">
+			<input class="span2" id="wtee" type="text">
+			<span class="add-on">Cals</span>
+		</div>
+	</div>	
+
+	<div class="total-daily-expenditure">
+		<label>TDEE: </label>
+		<div class="input-append">
+			<input class="span2" id="appendedInput" type="text">
+			<span class="add-on">Cals</span>
+		</div>
+	</div>
+	<div class="week-enery row">
+		<div class="span2">
+			<strong>Week Calories:</strong> 12123
+		</div>
+		<div class="span2">
+			<strong>Week Over:</strong> -3306
+		</div>
+		<div class="span2">
+			<strong>Week Change:</strong> -0.94
+		</div>
+	</div>
+</div>
+
+<div id="submit-form">
+	<button id="submit" type="submit" class="btn btn-primary">Save changes</button>
+</div>
+</form>
+
+<div id="piechart" class="row">
+	<div id="wo-pie" class=""></div>
+	<div id="rt-pie" class=""></div>
+</div>
+</div>
+</div>
+</body>
+</html>
