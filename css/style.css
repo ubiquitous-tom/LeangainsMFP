@@ -1,9 +1,19 @@
-body {margin: 20px;}
+body {margin: 0; background: #ccc;}
 .wrapper {width: 500px;margin: 0 auto;padding: 10px 20px;}
 #lg-days th, #lg-days td {text-align: center !important;}
-.lg-cal span, .lg-macro span {font-weight:bold;}
+
 .day-type {text-align: center;}
 .day-type h1 {margin:0 auto 20px;font-weight: bold;}
 
 #today-ratio {width:50%;float:left;}
 #rec-ratio {width:50%;float:left;}
+
+
+/* Option Page */
+.container {background:#fff;margin: 30px auto; border-radius: 10px;}
+.split-container {width:50%;}
+.main-text {text-align: center;}
+
+th, td {width:30%;}
+.buffer {margin-top:10px;}
+#submit-form {margin-bottom: 40px;}

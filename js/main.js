@@ -15,10 +15,6 @@ function lgInit() {
 	var tRatio = jQuery('<div/>').attr('id','today-ratio');
 	var rRatio = jQuery('<div/>').attr('id','rec-ratio');
 	jQuery('#content').append(tRatio).append(rRatio);
-    // chrome.storage.local.remove('lg', function() {
-    //     // Notify that we saved.
-    //     console.log('Settings removed');
-    // });
     get_table_column();
 }
 
@@ -291,6 +287,7 @@ function make_pie_chart() {
         }
     });
 }
+
 
 // window.addEventListener("load", function(){
 	lgInit();

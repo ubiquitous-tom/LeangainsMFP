@@ -1,39 +1,3 @@
-// function init() {
-// 	jQuery.noConflict();
-// 	visual();
-// }
-
-// function visual() {
-// 	google.load("visualization", "1", {packages:["corechart"]});
-// 	google.setOnLoadCallback(drawChart);
-// }
-
-// function drawChart() {
-// 	var wo = google.visualization.arrayToDataTable([
-// 				['Maccro', 'Macro per Day'],
-// 				['Protien',     180.0],
-// 				['Carbs',      237.0],
-// 				['Fat',  35.1]
-// 			]);
-// 	var rt = google.visualization.arrayToDataTable([
-// 				['Maccro', 'Macro per Day'],
-// 				['Protien',     180.0],
-// 				['Carbs',      51.4],
-// 				['Fat',  68.6]
-// 			]);
-
-// 	var wo_options = {
-// 	  title: 'Workout Day'
-// 	};
-// 	var rt_options = {
-// 	  title: 'Rest Day'
-// 	};
-
-// 	var wo_chart = new google.visualization.PieChart(jQuery('#wo-pie').get(0));
-// 	var rt_chart = new google.visualization.PieChart(jQuery('#rt-pie').get(0));
-// 	wo_chart.draw(wo, wo_options);
-// 	rt_chart.draw(rt, rt_options);
-// }
 var lg = {};
 var woDays = {m:1, t:0, w:1, th:0, f:1, sa:0, su:0};
 var rtDays = {m:0, t:0, w:0, th:0, f:0, sa:0, su:0};
@@ -120,6 +84,14 @@ function save_options() {
 
 }
 
+function delete_options() {
+    chrome.storage.local.remove('lg', function() {
+        // Notify that we saved.
+        console.log('Settings removed');
+        location.reload();
+    });
+}
+
 function restore_options() {
 	
 
@@ -167,22 +139,28 @@ $(document).ready(function() {
 	//restore_options();
 	//save_options();
 
-chrome.storage.onChanged.addListener(function(changes, namespace) {
-  for (key in changes) {
-    var storageChange = changes[key];
-    console.log('Storage key "%s" in namespace "%s" changed. ' +
-                'Old value was "%s", new value is "%s".',
-                key,
-                namespace,
-                storageChange.oldValue,
-                storageChange.newValue);
-  }
-});
-	
+	chrome.storage.onChanged.addListener(function(changes, namespace) {
+	  for (key in changes) {
+	    var storageChange = changes[key];
+	    console.log('Storage key "%s" in namespace "%s" changed. ' +
+	                'Old value was "%s", new value is "%s".',
+	                key,
+	                namespace,
+	                storageChange.oldValue,
+	                storageChange.newValue);
+	  }
+	});
+		
 	$('#submit').click(function(e){
 		e.preventDefault();
 		save_options();
 		console.log('submit');
+	});
+
+	$('#delete').click(function(e){
+		e.preventDefault();
+		delete_options();
+		console.log('delete');
 	});
 
 });
