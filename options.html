@@ -5,7 +5,7 @@
 <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
 <link rel="stylesheet" type="text/css" href="css/style.css" />
 <script src="js/vendor/jquery-1.9.1.min.js"></script> <!-- Including jQuery -->
-<script src="js/vendor/jquery-migrate-1.1.0.min.js"></script>
+<script src="js/vendor/jquery-migrate-1.1.1.min.js"></script>
 <script src="js/options.js"></script> <!-- Our script file -->
 <!-- <script type="text/javascript" src="https://www.google.com/jsapi"></script> -->
 </head>
@@ -69,6 +69,7 @@
 <div id="calories" class="buffer span11">
 	<h4>Calories</h4>
 	<div class="lg-calories">
+		<div class="control-group">
 		<div class="split-container pull-left">
 			<p><strong>Workout Days</strong></p>
 			<div class="input-append">
@@ -76,12 +77,15 @@
 				<span class="add-on">Cals</span>
 			</div>
 		</div>
+		</div>
+		<div class="control-group">
 		<div class="split-container pull-left">
 			<p><strong>Rest Days</strong></p>
 			<div class="input-append">
 				<input class="span4" id="rt-cal-input" type="text" placeholder="Workout day calories">
 				<span class="add-on">Cals</span>
 			</div>
+		</div>
 		</div>
 	</div>
 </div>
@@ -90,39 +94,51 @@
 	<div class="lg-macro">
 		<div class="split-container pull-left">
 			<p><strong>Workout Days</strong></p>
+			<div class="control-group">
 		    <div class="input-prepend input-append">
-		    <span class="add-on">Protein</span>
-		    <input class="span4" id="wo-protein" type="text" placeholder="Protein macro in grams">
-		    <span class="add-on">g</span>
+		    	<span class="add-on">Protein</span>
+		    	<input class="span4" id="wo-protein" type="text" placeholder="Protein macro in grams">		    
+		    	<span class="add-on">g</span>
 		    </div>
-	        <div class="input-prepend input-append">
-		    <span class="add-on">Carbs</span>
-		    <input class="span4" id="wo-carbs" type="text" placeholder="Carbs macro in grams">
-		    <span class="add-on">g</span>
 		    </div>
-	        <div class="input-prepend input-append">
-		    <span class="add-on">Fat</span>
-		    <input class="span4" id="wo-fat" type="text" placeholder="Fat macro in grams">
-		    <span class="add-on">g</span>
+			<div class="control-group">
+		    <div class="input-prepend input-append">
+		    	<span class="add-on">Carbs</span>
+		    	<input class="span4" id="wo-carbs" type="text" placeholder="Carbs macro in grams">		    
+		    	<span class="add-on">g</span>
 		    </div>
+		    </div>
+			<div class="control-group">
+		    <div class="input-prepend input-append">
+		    	<span class="add-on">Fat</span>
+		    	<input class="span4" id="wo-fat" type="text" placeholder="Fat macro in grams">		    
+		    	<span class="add-on">g</span>
+		    </div>
+			</div>
 		</div>
 		<div class="split-container pull-right">
 			<p><strong>Rest Days</strong></p>
-		    <div class="input-prepend input-append">
-		    <span class="add-on">Protein</span>
-		    <input class="span4" id="rt-protein" type="text" placeholder="Protein macro in grams">
-		    <span class="add-on">g</span>
-		    </div>
-	        <div class="input-prepend input-append">
-		    <span class="add-on">Carbs</span>
-		    <input class="span4" id="rt-carbs" type="text" placeholder="Carbs macro in grams">
-		    <span class="add-on">g</span>
-		    </div>
-	        <div class="input-prepend input-append">
-		    <span class="add-on">Fat</span>
-		    <input class="span4" id="rt-fat" type="text" placeholder="Fat macro in grams">
-		    <span class="add-on">g</span>
-		    </div>
+			<div class="control-group">
+			<div class="input-prepend input-append">
+				<span class="add-on">Protein</span>
+				<input class="span4" id="rt-protein" type="text" placeholder="Protein macro in grams">			
+				<span class="add-on">g</span>
+			</div>
+			</div>
+			<div class="control-group">
+			<div class="input-prepend input-append">
+				<span class="add-on">Carbs</span>
+				<input class="span4" id="rt-carbs" type="text" placeholder="Carbs macro in grams">			
+				<span class="add-on">g</span>
+			</div>
+			</div>
+			<div class="control-group">
+			<div class="input-prepend input-append">
+				<span class="add-on">Fat</span>
+				<input class="span4" id="rt-fat" type="text" placeholder="Fat macro in grams">			
+				<span class="add-on">g</span>
+			</div>
+			</div>
 		</div>
 	</div>
 </div>
@@ -134,7 +150,7 @@
 	<div class="clearfix">
 	<div id="lg-gender" class="span3">
 		<p><strong>Gender</strong></p>
-		<div class="">
+		<div class="control-group">
 			<label class="radio">
 				<input type="radio" name="gender" id="gender_m" value="m">	
 				Male
@@ -147,27 +163,39 @@
 	</div>
 	<div id="lg-height" class="span5"> 
 		<p><strong>Height</strong></p>
-		<div class="form-inline">
-			<div class="input-append">
-				<input id="height_ft" type="text" class="input-small" placeholder="0">	
-				<span class="add-on">ft.</span>
-				<input id="height_in" type="text" class="input-small" placeholder="0">	
-				<span class="add-on">in.</span>
+		<div class="row">
+			<div class="span2">
+				<div class="control-group">
+				<div class="input-append">
+					<input id="height_ft" type="text" class="input-small watched" placeholder="0">	
+					<span class="add-on">ft.</span>
+				</div>
+				</div>
+				<div class="input-append">
+					<input id="height_cm" type="text" class="input-small watched" placeholder="0" disabled>	
+					<span class="add-on">cm.</span>
+				</div>
 			</div>
-		</div>
-		<div class="input-append">
-			<input id="height_cm" type="text" class="input-small" placeholder="0" disabled>	
-			<span class="add-on">cm.</span>
+			<div class="span2">
+				<div class="control-group">
+				<div class="input-append">
+					<input id="height_in" type="text" class="input-small watched" placeholder="0">	
+					<span class="add-on">in.</span>
+				</div>
+				</div>		
+			</div>
 		</div>
 	</div>
 	<div id="lg-weight" class="span2">
 		<p><strong>Weight</strong></p>
+		<div class="control-group">
 		<div class="input-append">
-			<input id="weight_lb" type="text" class="input-small" placeholder="0">		
+			<input id="weight_lb" type="text" class="input-small watched" placeholder="0">		
 			<span class="add-on">lb.</span>
 		</div>
+		</div>
 		<div class="input-append">
-			<input id="weight_kg" type="text" class="input-small" placeholder="0" disabled>		
+			<input id="weight_kg" type="text" class="input-small watched" placeholder="0" disabled>		
 			<span class="add-on">kg.</span>
 		</div>
 	</div>
@@ -177,14 +205,17 @@
 	<div class="clearfix">
 	<div id="lg-age" class="span3">
 		<p><strong>Age</strong></p>
+		<div class="control-group">
 		<div class="input-append">
-		 <input id="age" type="text" class="input-small" placeholder="0"><span class="add-on">yr.</span>
+		 <input id="age" type="text" class="input-small watched" placeholder="0">
+		 <span class="add-on">yr.</span>
 		</div>
+		</div>		
 	</div>
-	<div id="lg-activity" class="span5">
+	<div id="lg-activity" class="span4">
 		<p><strong>Activity</strong></p>
-		<div>
-		<select id="activity">
+		<div class="control-group">
+		<select id="activity" class="watched">
 			<option value="0">Sedentary</option>
 			<option value="1">Lightly Active</option>
 			<option value="2">Moderately Active</option>
@@ -192,6 +223,16 @@
 			<option value="4">Extremely Active</option>
 		</select>
 		</div>
+	</div>
+	<div id="lg-bf" class="span3">
+		<p><strong>Body fat %</strong></p>
+		<div class="control-group">
+		<div class="input-append">
+			<input id="body_fat" type="text" class="input-small watched" placeholder="0">		
+			<span class="add-on">%</span>
+		</div>
+		</div>
+		(optional)
 	</div>
 	</div>
 
@@ -203,10 +244,10 @@
 	<div id="lg-bmr" class="clearfix">
 		<p><strong>BMR</strong></p>
 		<div class="input-append">
-			<input class="span2" id="wtee" type="text">
+			<input class="span2" id="bmr" type="text">
 			<span class="add-on">Cals</span>
 		</div>
-		(Katch-McArdle formula has been used for this calculation.)
+		<span class="help-inline">(Mifflin-St.Jeor Formula has been used for this calculation.)</span>
 	</div>
 
 	<hr>
@@ -216,7 +257,7 @@
 		<div id="lg-total-week-expenditure" class="span4">
 			<p><strong>Week TEE</strong></p>
 			<div class="input-append">
-				<input class="span2" id="wtee" type="text">
+				<input class="span2" id="twee" type="text">
 				<span class="add-on">Cals</span>
 			</div>
 		</div>	
@@ -224,20 +265,20 @@
 		<div id="lg-total-daily-expenditure" class="span4">
 			<p><strong>TDEE</strong></p>
 			<div class="input-append">
-				<input class="span2" id="appendedInput" type="text">
+				<input class="span2" id="tdee" type="text">
 				<span class="add-on">Cals</span>
 			</div>
 		</div>
 		<div id="lg-week-enery" class="span3">
 
 			<div class="">
-				<p><strong>Week Calories:</strong> 12123</p>
+				<p><strong>Week Calories:</strong> <span class="week_cal"></span></p>
 			</div>
 			<div class="">
-				<p><strong>Week Over:</strong> -3306</p>
+				<p><strong>Week Over/Under:</strong> <span class="week_diff"></span></p>
 			</div>
 			<div class="">
-				<p><strong>Week Change:</strong> -0.94</p>
+				<p><strong>Week Change:</strong> <span class="week_change"></span></p>
 			</div>
 		</div>
 

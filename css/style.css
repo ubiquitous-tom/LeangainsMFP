@@ -1,6 +1,5 @@
 body {margin: 0; background: #ccc;}
 .wrapper {width: 500px;margin: 0 auto;padding: 10px 20px;}
-#lg-days th, #lg-days td {text-align: center !important;}
 
 .day-type {text-align: center;}
 .day-type h1 {margin:0 auto 20px;font-weight: bold;}
@@ -14,6 +13,10 @@ body {margin: 0; background: #ccc;}
 .split-container {width:50%;}
 .main-text {text-align: center;}
 
-th, td {width:30%;}
+#lg-days th, #lg-days  td {text-align: center !important; width:30%;}
 .buffer {margin-top:10px;}
 #submit-form {margin-bottom: 40px;}
+#lg-week-enery span {font-weight: bold;}
+
+.positive {color:#468847;}
+.negative {color:#b94a48;}
